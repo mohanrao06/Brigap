@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Brigap</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="home">
+
+  <!-- Background waves -->
+  <svg class="bg" viewBox="0 0 1517 710" preserveAspectRatio="none" aria-hidden="true">
+    <defs>
+      <linearGradient id="gTL" x1="0" y1="0" x2=".55" y2=".85">
+        <stop offset="0" stop-color="#06334c"/><stop offset=".6" stop-color="#0a6a86"/><stop offset="1" stop-color="#2fb8cf"/>
+      </linearGradient>
+      <linearGradient id="gR" x1="0" y1="1" x2="1" y2="0">
+        <stop offset="0" stop-color="#0a4674"/><stop offset="1" stop-color="#2f679f"/>
+      </linearGradient>
+      <linearGradient id="gBL" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0" stop-color="#2d80be"/><stop offset=".35" stop-color="#14679a"/><stop offset="1" stop-color="#03456a"/>
+      </linearGradient>
+      <linearGradient id="gBR" x1="0" y1="1" x2="1" y2="0">
+        <stop offset="0" stop-color="#0395b3"/><stop offset=".25" stop-color="#1ebcc7"/><stop offset="1" stop-color="#0a90a4"/>
+      </linearGradient>
+      <filter id="glow" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="5"/></filter>
+    </defs>
+    <path d="M0 0 H372 C332 72 242 135 122 170 C78 182 36 188 0 190Z" fill="url(#gTL)"/>
+    <path d="M0 190 C58 190 112 180 172 160 C122 208 62 244 0 258Z" fill="#0f9aaa" opacity=".75"/>
+    <path d="M372 0 C332 72 242 135 122 170 C78 182 36 188 0 190" fill="none" stroke="#9ffcff" stroke-width="5" opacity=".8" filter="url(#glow)"/>
+    <path d="M372 0 C332 72 242 135 122 170 C78 182 36 188 0 190" fill="none" stroke="#c8ffff" stroke-width="1.5" opacity=".8"/>
+    <path d="M1517 203 C1440 212 1368 290 1160 332 C1292 338 1422 310 1517 268Z" fill="url(#gR)"/>
+    <path d="M1517 203 C1440 212 1368 290 1160 332" fill="none" stroke="#8ab8f5" stroke-width="5" opacity=".6" filter="url(#glow)"/>
+    <path d="M1517 203 C1440 212 1368 290 1160 332" fill="none" stroke="#a9ccff" stroke-width="1.5" opacity=".7"/>
+    <path d="M0 622 C120 618 250 648 400 690 C470 708 520 718 560 710 V710 H0Z" fill="url(#gBL)"/>
+    <path d="M0 622 C120 618 250 648 400 690" fill="none" stroke="#5aa8ee" stroke-width="5" opacity=".6" filter="url(#glow)"/>
+    <path d="M0 622 C120 618 250 648 400 690" fill="none" stroke="#7fc0ff" stroke-width="1.5" opacity=".7"/>
+    <path d="M980 710 C1130 690 1260 676 1517 590 V710Z" fill="url(#gBR)"/>
+    <path d="M1180 710 C1340 690 1450 650 1517 612 V710Z" fill="#2fe0d8" opacity=".3"/>
+    <path d="M980 710 C1130 690 1260 676 1517 590" fill="none" stroke="#6ff5ee" stroke-width="5" opacity=".7" filter="url(#glow)"/>
+    <path d="M980 710 C1130 690 1260 676 1517 590" fill="none" stroke="#a6fff8" stroke-width="1.5" opacity=".7"/>
+  </svg>
+
+  <h1>Welcome to <span>Brigap</span></h1>
+  <p class="subtitle">A smart platform to discover, develop and upgrade your skills.</p>
+  <p id="home-prompt" class="subtitle">Step 1: Choose your domain to begin your personalized journey.</p>
+  <div class="line"></div>
+
+  <!-- STEP 1: Domain Selection -->
+  <div id="step-domain" style="width:min(680px,90%);padding:28px 24px;border-radius:26px;background:rgba(255,255,255,0.06);border:1px solid rgba(143,245,236,0.35);box-shadow:0 16px 40px rgba(0,0,0,0.35);">
+    <label for="home-domain-select" style="display:block;font-size:15px;font-weight:600;margin-bottom:14px;color:#8ff5ec;">
+      Select Your Learning Domain
+    </label>
+    <select id="home-domain-select"
+      style="width:100%;padding:15px 18px;border-radius:16px;border:1px solid rgba(255,255,255,0.28);background:#073652;color:white;font-family:inherit;font-size:16px;outline:none;cursor:pointer;">
+      <option value="">Loading domains...</option>
+    </select>
+    <button type="button" id="continue-domain-btn" class="button"
+      style="margin-top:20px;padding:14px 34px;border-radius:30px;border:none;background:linear-gradient(135deg,#1fb8aa,#087f8d);color:white;font-family:inherit;font-size:16px;font-weight:600;cursor:pointer;">
+      Continue to Level Selection →
+    </button>
+  </div>
+
+  <!-- STEP 2: Beginner / Experienced Cards (Shown after Domain is chosen) -->
+  <div id="step-level" style="display:none;width:100%;flex-direction:column;align-items:center;">
+    <div style="margin-bottom:22px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:center;">
+      <span id="chosen-domain-pill" style="padding:8px 18px;border-radius:20px;background:rgba(66,228,226,0.16);border:1px solid #42e4e2;color:#8ff5ec;font-size:14px;font-weight:600;"></span>
+      <button type="button" id="change-domain-btn"
+        style="padding:8px 16px;border-radius:20px;border:1px solid rgba(255,255,255,0.25);background:transparent;color:white;font-family:inherit;font-size:13px;cursor:pointer;">
+        Change Domain
+      </button>
+    </div>
+
+    <div class="cards">
+      <!-- Beginner card -->
+      <a class="card beginner" href="course-recommendation.html" onclick="selectPath('beginner')">
+        <svg class="wave" viewBox="0 0 643 90" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M0 62 C90 28 170 18 270 38 C370 58 470 66 560 36 C600 24 625 24 643 30 V90 H0Z" fill="#fff" opacity=".11"/>
+        </svg>
+        <svg class="icon" viewBox="0 0 130 110" aria-hidden="true">
+          <defs>
+            <linearGradient id="capTop" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e8fffa"/><stop offset="1" stop-color="#8ff0e0"/></linearGradient>
+            <linearGradient id="capBase" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7fecd8"/><stop offset="1" stop-color="#3cc4b8"/></linearGradient>
+          </defs>
+          <path d="M30 56 V80 Q64 100 98 80 V56 L64 70Z" fill="url(#capBase)"/>
+          <path d="M64 10 L124 36 L64 62 L4 36Z" fill="url(#capTop)"/>
+          <path d="M4 36 L64 62 L64 68 L4 42Z" fill="#a8f5ea" opacity=".6"/>
+          <circle cx="48" cy="34" r="4" fill="#2aa8a0"/>
+          <path d="M48 34 L110 46 V74" fill="none" stroke="#d8fff8" stroke-width="3" stroke-linecap="round"/>
+          <path d="M110 70 Q104 82 110 92 Q116 82 110 70Z" fill="#6fe8d8"/>
+        </svg>
+        <div class="bar"></div>
+        <div class="text">
+          <h2>Beginner</h2>
+          <p>Start from the basics and<br>build a strong foundation.</p>
+        </div>
+        <span class="go">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12H19M13 5.500L19.500 12L13 18.500"/></svg>
+        </span>
+      </a>
+
+      <!-- Experienced / Advanced card -->
+      <a class="card experienced" href="ai-test-maker.html" onclick="selectPath('experienced')">
+        <svg class="wave" viewBox="0 0 643 90" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M0 62 C90 28 170 18 270 38 C370 58 470 66 560 36 C600 24 625 24 643 30 V90 H0Z" fill="#fff" opacity=".11"/>
+        </svg>
+        <svg class="icon" viewBox="0 0 130 110" aria-hidden="true">
+          <defs>
+            <linearGradient id="barG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e4f1ff"/><stop offset="1" stop-color="#6fb0ff"/></linearGradient>
+          </defs>
+          <path d="M10 48 Q60 44 100 14" fill="none" stroke="#e4f1ff" stroke-width="6" stroke-linecap="round"/>
+          <path d="M80 10 L106 8 L102 34" fill="none" stroke="#e4f1ff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect x="14" y="66" width="26" height="30" rx="3" fill="url(#barG)"/>
+          <rect x="52" y="54" width="26" height="42" rx="3" fill="url(#barG)"/>
+          <rect x="90" y="32" width="26" height="64" rx="3" fill="url(#barG)"/>
+          <rect x="4" y="98" width="122" height="6" rx="3" fill="#cfe5ff"/>
+        </svg>
+        <div class="bar"></div>
+        <div class="text">
+          <h2>Experienced</h2>
+          <p>Take a 30-MCQ AI benchmark<br>to unlock tailored courses.</p>
+        </div>
+        <span class="go">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12H19M13 5.500L19.500 12L13 18.500"/></svg>
+        </span>
+      </a>
+    </div>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

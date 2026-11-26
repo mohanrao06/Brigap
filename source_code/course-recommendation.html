@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Course Recommendation — Brigap</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="brand">Bri<span>gap</span></div>
+  </header>
+  <main class="page" style="max-width:1060px;margin:0 auto;padding:48px 24px;">
+    <h1 style="font-size:36px;line-height:1.2;margin-bottom:10px;">AI Course Recommendations</h1>
+    <p id="benchmark-banner" style="font-size:16px;opacity:0.88;margin-bottom:24px;">Loading your personalized learning path...</p>
+
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:28px;">
+      <input id="course-search" type="text" placeholder="Search course name or organisation..."
+        style="padding:12px 18px;border-radius:24px;border:1px solid rgba(255,255,255,0.25);background:rgba(255,255,255,0.08);color:white;min-width:260px;font-family:inherit;font-size:14px;outline:none;">
+      <select id="domain-filter"
+        style="padding:12px 18px;border-radius:24px;border:1px solid rgba(255,255,255,0.25);background:#093053;color:white;font-family:inherit;font-size:14px;outline:none;cursor:pointer;max-width:260px;">
+        <option value="all">All Domains</option>
+      </select>
+      <select id="level-filter"
+        style="padding:12px 18px;border-radius:24px;border:1px solid rgba(255,255,255,0.25);background:#093053;color:white;font-family:inherit;font-size:14px;outline:none;cursor:pointer;">
+        <option value="recommended">AI Recommended</option>
+        <option value="all">All Levels</option>
+        <option value="beginner">Beginner</option>
+        <option value="intermediate">Intermediate</option>
+        <option value="advanced">Advanced</option>
+      </select>
+    </div>
+
+    <div id="recommendations-list"
+      style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px;text-align:left;">
+    </div>
+
+    <a class="button" style="display:inline-flex;margin-top:36px;font-size:14px;" href="index.html">← Back to Dashboard</a>
+  </main>
+  <script src="script.js" defer></script>
+</body>
+
+</html>
